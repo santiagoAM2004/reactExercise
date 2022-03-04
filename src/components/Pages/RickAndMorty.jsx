@@ -17,15 +17,24 @@ export const RickAndMorty = () => {
      .then(response => response.json())
      .then(data => setCharacter(data.results)
      )
+     
    }
-
-  
   return (
-    <div>
+    <div className='container'>
         <Header />
         <Buttons nameButton ="START" styleButton ="button1" events={getAPI} />
-        <Box character = {character}/> 
-        <Footer />
+        <div className='cards-container'>
+          {
+            character.map((character) =>
+              <Box 
+                idCharacter={character.id}
+                nameCharacter={character.name}
+                imgCharacter = {character.image}
+              />  
+            )
+          }
+        </div> 
+        <Footer /> 
     </div>
   )
 }

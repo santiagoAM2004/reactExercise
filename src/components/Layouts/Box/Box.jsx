@@ -1,11 +1,9 @@
 import React from 'react'
 
-export const Box = ({character}) => {
+export const Box = ({idCharacter, nameCharacter, imgCharacter}) => {
   return (
-    <> 
-      <div key = {character.id}>
-          <h2>{character.name}</h2>
-          <img src={character.image} alt={character.name}></img>
+      <div id="box" key={idCharacter}>
+          <h2>{nameCharacter}</h2>
+          <img src={imgCharacter} alt={nameCharacter}></img>
       </div>
-    </>  
 )};
